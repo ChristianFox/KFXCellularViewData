@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KFXCellularViewData_Example' do
+  pod 'KFXCellularViewData', :path => '../'
+
+  target 'KFXCellularViewData_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
