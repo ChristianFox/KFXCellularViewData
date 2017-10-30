@@ -89,10 +89,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/KFXAbstracts/KFXAbstracts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/KFXAdditions/KFXAdditions.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KFXCellularViewData/KFXCellularViewData.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/KFXUtilities/KFXUtilities.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/KFXAbstracts/KFXAbstracts.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/KFXAdditions/KFXAdditions.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KFXCellularViewData/KFXCellularViewData.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/KFXUtilities/KFXUtilities.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

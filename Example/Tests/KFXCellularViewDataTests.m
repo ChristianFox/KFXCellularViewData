@@ -155,6 +155,9 @@
     XCTAssertNil(sectionData0.cellularViewData);
 }
 
+//-----------------------------------
+// -deleteSectionAtIndex:
+//-----------------------------------
 -(void)testDeleteSectionAtIndex_WithValidSection_ShouldDeleteSection{
     
     // GIVEN
@@ -170,6 +173,9 @@
     XCTAssertNil(sectionData0.cellularViewData);
 }
 
+//-----------------------------------
+// -deleteSections:
+//-----------------------------------
 -(void)testDeleteSections_WithValidSection_ShouldDeleteSection{
     
     // GIVEN
@@ -341,6 +347,8 @@
     XCTAssertEqual([self.sut.sections.firstObject.cells indexOfObject:cellData2], 1);
 }
 
+
+ 
 //--------------------------------------------------------
 #pragma mark Test SectionData Getters
 //--------------------------------------------------------

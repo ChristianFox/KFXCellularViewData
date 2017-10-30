@@ -19,6 +19,8 @@
 #import "KFXCellularViewData.h"
 #import "KFXCollectionViewData.h"
 #import "KFXTableViewData.h"
+#import "KFXDynamicCollectionViewController.h"
+#import "KFXDynamicTableViewController.h"
 
 FOUNDATION_EXPORT double KFXCellularViewDataVersionNumber;
 FOUNDATION_EXPORT const unsigned char KFXCellularViewDataVersionString[];

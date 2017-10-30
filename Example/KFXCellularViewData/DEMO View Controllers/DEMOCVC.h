@@ -1,6 +1,6 @@
 
 
-#import "KFXDynamicCollectionViewController.h"
+#import <KFXCellularViewData/KFXDynamicCollectionViewController.h>
 
 @interface DEMOCVC : KFXDynamicCollectionViewController
 

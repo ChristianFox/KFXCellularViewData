@@ -1,6 +1,6 @@
 
 
-#import "KFXDynamicTableViewController.h"
+#import <KFXCellularViewData/KFXDynamicTableViewController.h>
 
 @interface DEMOTVC : KFXDynamicTableViewController
 

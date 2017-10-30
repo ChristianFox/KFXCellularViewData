@@ -1,16 +1,30 @@
 PODS:
-  - KFXCellularViewData (0.1.0)
+  - KFXAbstracts (0.5.0):
+    - KFXAdditions
+    - SVProgressHUD
+  - KFXAdditions (1.0.0)
+  - KFXCellularViewData (0.2.0):
+    - KFXAbstracts
+  - KFXUtilities (2.0.0)
+  - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
+  - KFXAbstracts
+  - KFXAdditions
   - KFXCellularViewData (from `../`)
+  - KFXUtilities (>= 2.0.0)
 
 EXTERNAL SOURCES:
   KFXCellularViewData:
     :path: "../"
 
 SPEC CHECKSUMS:
-  KFXCellularViewData: 471cf3722ae8ba67050b95f1b7c62c8c51c89f77
+  KFXAbstracts: 9951cdfaebfcfe254724bdb9e6734afb42f5bf27
+  KFXAdditions: 4cb989c3625de9119d8374e3c8e78f70a3ede986
+  KFXCellularViewData: 369eaa65cb8ebe18c34c973d5f4a4487cb44f9dd
+  KFXUtilities: dc38b1984e6483b52223b5119bf74f38342960ee
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: 3a19378a54f12bfc8d7241add6d3d26b914841b3
+PODFILE CHECKSUM: f6fe46df3f121f61965877464b8e54dc2756cb23
 
 COCOAPODS: 1.2.1

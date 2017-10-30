@@ -9,23 +9,17 @@
 /* Begin PBXBuildFile section */
 		12E966B5A5E29FDFE7D2ADE8 /* Pods_KFXCellularViewData_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7246D960B757F6D44F1BE910 /* Pods_KFXCellularViewData_Example.framework */; };
 		371A3ED7185B639C037C089D /* Pods_KFXCellularViewData_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1AF6125C8DE9D9FF76C12B /* Pods_KFXCellularViewData_Tests.framework */; };
-		5B474DFB1F9E29B300D8AF7E /* KFXDynamicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5296DD1F9D2B920024259F /* KFXDynamicCollectionViewController.m */; };
-		5B474DFC1F9E29B600D8AF7E /* KFXDynamicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5296DC1F9D2B920024259F /* KFXDynamicTableViewController.m */; };
-		5B474E031F9E2ED000D8AF7E /* KFXCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B474DFE1F9E2ECC00D8AF7E /* KFXCollectionReusableView.m */; };
 		5B474E041F9E2ED300D8AF7E /* DEMOCollectionViewSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B474E021F9E2ECD00D8AF7E /* DEMOCollectionViewSectionHeader.m */; };
 		5B474E051F9E2ED700D8AF7E /* DEMOCollectionViewSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B474DFF1F9E2ECC00D8AF7E /* DEMOCollectionViewSectionHeader.xib */; };
-		5B474E101F9E7BD100D8AF7E /* KFXDynamicTableViewDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B474E0F1F9E7BD100D8AF7E /* KFXDynamicTableViewDataTests.m */; };
-		5B474E121F9E7C1200D8AF7E /* KFXDynamicCollectionViewDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B474E111F9E7C1200D8AF7E /* KFXDynamicCollectionViewDataTests.m */; };
 		5B5296CE1F9D25DD0024259F /* DEMOTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5296CD1F9D25DD0024259F /* DEMOTableViewCell.m */; };
 		5B5296CF1F9D25EB0024259F /* DEMOCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5296CB1F9D25C60024259F /* DEMOCollectionViewCell.m */; };
 		5B5296D61F9D27DD0024259F /* DEMOTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5296D51F9D27DD0024259F /* DEMOTVC.m */; };
 		5B5296D91F9D27E70024259F /* DEMOCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5296D81F9D27E70024259F /* DEMOCVC.m */; };
-		5B5296E21F9D34220024259F /* KFXDynamicTableViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5296E11F9D34220024259F /* KFXDynamicTableViewData.m */; };
-		5B5296E51F9D34380024259F /* KFXDynamicCollectionViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5296E41F9D34380024259F /* KFXDynamicCollectionViewData.m */; };
 		5B81613C1F9CC0BB00DF4CB8 /* KFXCellDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B81613B1F9CC0BB00DF4CB8 /* KFXCellDataTests.m */; };
 		5B8161511F9CCC5D00DF4CB8 /* KFXSectionDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8161501F9CCC5D00DF4CB8 /* KFXSectionDataTests.m */; };
 		5B8161531F9CDED600DF4CB8 /* KFXCellularViewDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8161521F9CDED600DF4CB8 /* KFXCellularViewDataTests.m */; };
 		5BD93E071F9DEB150019F81A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B5296D31F9D27240024259F /* Main.storyboard */; };
+		5BE34BAC1FA7818900913A47 /* KFXCellularViewDataDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE34BAB1FA7818900913A47 /* KFXCellularViewDataDelegateTests.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -54,13 +48,9 @@
 		07150DF69490123B31E15B6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		180EB18402E68FE1F51B8DE8 /* KFXCellularViewData.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KFXCellularViewData.podspec; path = ../KFXCellularViewData.podspec; sourceTree = "<group>"; };
 		417DEE2CACE959624126318B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		5B474DFE1F9E2ECC00D8AF7E /* KFXCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXCollectionReusableView.m; sourceTree = "<group>"; };
 		5B474DFF1F9E2ECC00D8AF7E /* DEMOCollectionViewSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DEMOCollectionViewSectionHeader.xib; sourceTree = "<group>"; };
 		5B474E001F9E2ECC00D8AF7E /* DEMOCollectionViewSectionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMOCollectionViewSectionHeader.h; sourceTree = "<group>"; };
-		5B474E011F9E2ECD00D8AF7E /* KFXCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFXCollectionReusableView.h; sourceTree = "<group>"; };
 		5B474E021F9E2ECD00D8AF7E /* DEMOCollectionViewSectionHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DEMOCollectionViewSectionHeader.m; sourceTree = "<group>"; };
-		5B474E0F1F9E7BD100D8AF7E /* KFXDynamicTableViewDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXDynamicTableViewDataTests.m; sourceTree = "<group>"; };
-		5B474E111F9E7C1200D8AF7E /* KFXDynamicCollectionViewDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXDynamicCollectionViewDataTests.m; sourceTree = "<group>"; };
 		5B5296C61F9D24B00024259F /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
 		5B5296C71F9D24B00024259F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		5B5296CA1F9D25C60024259F /* DEMOCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMOCollectionViewCell.h; sourceTree = "<group>"; };
@@ -72,17 +62,10 @@
 		5B5296D51F9D27DD0024259F /* DEMOTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DEMOTVC.m; sourceTree = "<group>"; };
 		5B5296D71F9D27E70024259F /* DEMOCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMOCVC.h; sourceTree = "<group>"; };
 		5B5296D81F9D27E70024259F /* DEMOCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DEMOCVC.m; sourceTree = "<group>"; };
-		5B5296DC1F9D2B920024259F /* KFXDynamicTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXDynamicTableViewController.m; sourceTree = "<group>"; };
-		5B5296DD1F9D2B920024259F /* KFXDynamicCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXDynamicCollectionViewController.m; sourceTree = "<group>"; };
-		5B5296DE1F9D2B920024259F /* KFXDynamicTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFXDynamicTableViewController.h; sourceTree = "<group>"; };
-		5B5296DF1F9D2B930024259F /* KFXDynamicCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFXDynamicCollectionViewController.h; sourceTree = "<group>"; };
-		5B5296E01F9D34220024259F /* KFXDynamicTableViewData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFXDynamicTableViewData.h; sourceTree = "<group>"; };
-		5B5296E11F9D34220024259F /* KFXDynamicTableViewData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXDynamicTableViewData.m; sourceTree = "<group>"; };
-		5B5296E31F9D34380024259F /* KFXDynamicCollectionViewData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFXDynamicCollectionViewData.h; sourceTree = "<group>"; };
-		5B5296E41F9D34380024259F /* KFXDynamicCollectionViewData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXDynamicCollectionViewData.m; sourceTree = "<group>"; };
 		5B81613B1F9CC0BB00DF4CB8 /* KFXCellDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXCellDataTests.m; sourceTree = "<group>"; };
 		5B8161501F9CCC5D00DF4CB8 /* KFXSectionDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXSectionDataTests.m; sourceTree = "<group>"; };
 		5B8161521F9CDED600DF4CB8 /* KFXCellularViewDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXCellularViewDataTests.m; sourceTree = "<group>"; };
+		5BE34BAB1FA7818900913A47 /* KFXCellularViewDataDelegateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFXCellularViewDataDelegateTests.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* KFXCellularViewData_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KFXCellularViewData_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,8 +120,6 @@
 		5B474DFD1F9E2EB500D8AF7E /* DEMO Reusable Views */ = {
 			isa = PBXGroup;
 			children = (
-				5B474E011F9E2ECD00D8AF7E /* KFXCollectionReusableView.h */,
-				5B474DFE1F9E2ECC00D8AF7E /* KFXCollectionReusableView.m */,
 				5B474E001F9E2ECC00D8AF7E /* DEMOCollectionViewSectionHeader.h */,
 				5B474E021F9E2ECD00D8AF7E /* DEMOCollectionViewSectionHeader.m */,
 				5B474DFF1F9E2ECC00D8AF7E /* DEMOCollectionViewSectionHeader.xib */,
@@ -166,28 +147,6 @@
 				5B5296D81F9D27E70024259F /* DEMOCVC.m */,
 			);
 			path = "DEMO View Controllers";
-			sourceTree = "<group>";
-		};
-		5B5296DA1F9D2B750024259F /* Dynamic VCs */ = {
-			isa = PBXGroup;
-			children = (
-				5B5296DE1F9D2B920024259F /* KFXDynamicTableViewController.h */,
-				5B5296DC1F9D2B920024259F /* KFXDynamicTableViewController.m */,
-				5B5296DF1F9D2B930024259F /* KFXDynamicCollectionViewController.h */,
-				5B5296DD1F9D2B920024259F /* KFXDynamicCollectionViewController.m */,
-			);
-			path = "Dynamic VCs";
-			sourceTree = "<group>";
-		};
-		5B5296DB1F9D2B7E0024259F /* Dynamic Data */ = {
-			isa = PBXGroup;
-			children = (
-				5B5296E01F9D34220024259F /* KFXDynamicTableViewData.h */,
-				5B5296E11F9D34220024259F /* KFXDynamicTableViewData.m */,
-				5B5296E31F9D34380024259F /* KFXDynamicCollectionViewData.h */,
-				5B5296E41F9D34380024259F /* KFXDynamicCollectionViewData.m */,
-			);
-			path = "Dynamic Data";
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -230,8 +189,6 @@
 				6003F59C195388D20070C39A /* DEMOAppDelegate.h */,
 				6003F59D195388D20070C39A /* DEMOAppDelegate.m */,
 				5B474DFD1F9E2EB500D8AF7E /* DEMO Reusable Views */,
-				5B5296DB1F9D2B7E0024259F /* Dynamic Data */,
-				5B5296DA1F9D2B750024259F /* Dynamic VCs */,
 				5B5296D21F9D26210024259F /* DEMO View Controllers */,
 				5B5296D11F9D26060024259F /* DEMO Cells */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -260,8 +217,7 @@
 				5B81613B1F9CC0BB00DF4CB8 /* KFXCellDataTests.m */,
 				5B8161501F9CCC5D00DF4CB8 /* KFXSectionDataTests.m */,
 				5B8161521F9CDED600DF4CB8 /* KFXCellularViewDataTests.m */,
-				5B474E0F1F9E7BD100D8AF7E /* KFXDynamicTableViewDataTests.m */,
-				5B474E111F9E7C1200D8AF7E /* KFXDynamicCollectionViewDataTests.m */,
+				5BE34BAB1FA7818900913A47 /* KFXCellularViewDataDelegateTests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -513,17 +469,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B5296E51F9D34380024259F /* KFXDynamicCollectionViewData.m in Sources */,
 				6003F59E195388D20070C39A /* DEMOAppDelegate.m in Sources */,
 				5B5296D61F9D27DD0024259F /* DEMOTVC.m in Sources */,
 				5B5296CF1F9D25EB0024259F /* DEMOCollectionViewCell.m in Sources */,
-				5B474DFB1F9E29B300D8AF7E /* KFXDynamicCollectionViewController.m in Sources */,
-				5B5296E21F9D34220024259F /* KFXDynamicTableViewData.m in Sources */,
 				5B474E041F9E2ED300D8AF7E /* DEMOCollectionViewSectionHeader.m in Sources */,
 				5B5296D91F9D27E70024259F /* DEMOCVC.m in Sources */,
-				5B474DFC1F9E29B600D8AF7E /* KFXDynamicTableViewController.m in Sources */,
 				5B5296CE1F9D25DD0024259F /* DEMOTableViewCell.m in Sources */,
-				5B474E031F9E2ED000D8AF7E /* KFXCollectionReusableView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,11 +483,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B474E121F9E7C1200D8AF7E /* KFXDynamicCollectionViewDataTests.m in Sources */,
+				5BE34BAC1FA7818900913A47 /* KFXCellularViewDataDelegateTests.m in Sources */,
 				5B8161531F9CDED600DF4CB8 /* KFXCellularViewDataTests.m in Sources */,
 				5B81613C1F9CC0BB00DF4CB8 /* KFXCellDataTests.m in Sources */,
 				5B8161511F9CCC5D00DF4CB8 /* KFXSectionDataTests.m in Sources */,
-				5B474E101F9E7BD100D8AF7E /* KFXDynamicTableViewDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,10 +46,22 @@
 //--------------------------------------------------------
 #pragma mark SectionData Setters
 //--------------------------------------------------------
+//-----------------------------------
+// Add Sections
+//-----------------------------------
 -(void)addSection:(KFXSectionData *)section{
 
     section.cellularViewData = self;
 	[self.sections addObject:section];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didInsertSections:atIndexes:)]) {
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:self.count-1];
+        [self.delegate cellularViewData:self
+                       didInsertSections:@[section]
+                               atIndexes:@[indexSet]];
+    }
+    
 }
 
 -(void)addSections:(NSArray<KFXSectionData *> *)sections{
@@ -62,8 +74,20 @@
         section.cellularViewData = self;
         [self.sections addObject:section];
     }
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didInsertSections:atIndexes:)]) {
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(self.count-1, sections.count)];
+        [self.delegate cellularViewData:self
+                      didInsertSections:sections
+                              atIndexes:@[indexSet]];
+    }
 }
 
+
+//-----------------------------------
+// Insert Sections
+//-----------------------------------
 -(void)insertSection:(KFXSectionData *)section atIndex:(NSUInteger)index{
     
     if (section == nil) {
@@ -73,6 +97,14 @@
     }
     section.cellularViewData = self;
     [self.sections insertObject:section atIndex:index];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didInsertSections:atIndexes:)]) {
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:index];
+        [self.delegate cellularViewData:self
+                      didInsertSections:@[section]
+                              atIndexes:@[indexSet]];
+    }
 }
 
 -(void)insertSections:(NSArray<KFXSectionData *> *)sections atIndex:(NSUInteger)index{
@@ -85,14 +117,38 @@
     for (KFXSectionData *section in sections) {
         section.cellularViewData = self;
     }
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(index, sections.count)];
     [self.sections insertObjects:sections
-                       atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(index, sections.count)]];
+                       atIndexes:indexSet];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didInsertSections:atIndexes:)]) {
+        [self.delegate cellularViewData:self
+                      didInsertSections:sections
+                              atIndexes:@[indexSet]];
+    }
 }
 
+//-----------------------------------
+// Delete Sections
+//-----------------------------------
 -(void)deleteSection:(KFXSectionData *)sectionData{
+    
+    NSUInteger sectionIndex;
+    if (self.delegate != nil) {
+        sectionIndex = [self indexOfSectionData:sectionData];
+    }
     
     sectionData.cellularViewData = nil;
     [self.sections removeObject:sectionData];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didDeleteSections:atIndexes:)]) {
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:sectionIndex];
+        [self.delegate cellularViewData:self
+                      didDeleteSections:@[sectionData]
+                              atIndexes:@[indexSet]];
+    }
 }
 
 -(void)deleteSectionAtIndex:(NSUInteger)index{
@@ -104,15 +160,34 @@
     KFXSectionData *sectionData = self.sections[index];
     sectionData.cellularViewData = nil;
     [self.sections removeObjectAtIndex:index];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didDeleteSections:atIndexes:)]) {
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:index];
+        [self.delegate cellularViewData:self
+                      didDeleteSections:@[sectionData]
+                              atIndexes:@[indexSet]];
+    }
 }
 
 -(void)deleteSections:(NSArray<KFXSectionData *> *)sections{
     
+    NSArray<NSIndexSet*> *indexSets;
+    if (self.delegate != nil) {
+        indexSets = [self orderedIndexSetsForSections:sections];
+    }
     for (KFXSectionData *section in sections) {
         
         NSAssert([self.sections containsObject:section], @"Can not delete section that is not present in receiver.sections array.");
         section.cellularViewData = nil;
         [self.sections removeObject:section];
+    }
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didDeleteSections:atIndexes:)]) {
+        [self.delegate cellularViewData:self
+                      didDeleteSections:sections
+                              atIndexes:indexSets];
     }
 }
 
@@ -120,10 +195,22 @@
 //--------------------------------------------------------
 #pragma mark CellData Setters
 //--------------------------------------------------------
+//-----------------------------------
+// Add CellDatas
+//-----------------------------------
 -(void)addCellData:(KFXCellData *)cell toSectionAtIndex:(NSUInteger)sectionIndex{
 
     KFXSectionData *section = self.sections[sectionIndex];
 	[section addCellData:cell];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didInsertCells:atIndexPaths:)]) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:section.cells.count-1
+                                                    inSection:sectionIndex];
+        [self.delegate cellularViewData:self
+                         didInsertCells:@[cell]
+                           atIndexPaths:@[indexPath]];
+    }
 }
 
 -(void)addCellDatas:(NSArray<KFXCellData *> *)cellDatas
@@ -136,15 +223,25 @@
     NSUInteger originalCount = section.count;
     [section addCellDataFromArray:cellDatas];
     
-    NSMutableArray *mutArray = [NSMutableArray arrayWithCapacity:10];
+    NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:10];
     for (NSInteger idx = originalCount; idx < section.count; idx++) {
         
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx
                                                     inSection:sectionIndex];
-        [mutArray addObject:indexPath];
+        [indexPaths addObject:indexPath];
+    }
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didInsertCells:atIndexPaths:)]) {
+        [self.delegate cellularViewData:self
+                         didInsertCells:cellDatas
+                           atIndexPaths:indexPaths];
     }
 }
 
+//-----------------------------------
+// Insert CellDatas
+//-----------------------------------
 -(void)insertCellData:(KFXCellData *)cell atIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.section >= self.sections.count) {
@@ -155,33 +252,67 @@
         return;
     }
 	[section insertCellData:cell atIndex:indexPath.row];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didInsertCells:atIndexPaths:)]) {
+        [self.delegate cellularViewData:self
+                         didInsertCells:@[cell]
+                           atIndexPaths:@[indexPath]];
+    }
 }
 
--(void)insertCellDatas:(NSArray<KFXCellData *> *)cells
+-(void)insertCellDatas:(NSArray<KFXCellData *> *)cellDatas
           atIndexPaths:(NSArray<NSIndexPath *> *)indexPaths{
     
-    NSAssert(cells.count == indexPaths.count, @"Array counts should be equal. Cells and IndexPaths should be equal");
+    NSAssert(cellDatas.count == indexPaths.count, @"Array counts should be equal. Cells and IndexPaths should be equal");
     NSUInteger index = 0;
     for (NSIndexPath *indexPath in indexPaths) {
      
         NSAssert(indexPath.section < self.sections.count, @"section index of index path is out of bounds. %ld >= %lu",(long)indexPath.section,(unsigned long)self.sections.count);
         KFXSectionData *section = self.sections[indexPath.section];
         NSAssert(indexPath.row < section.cells.count, @"row/item index of index path is out of bounds. %ld >= %lu",(long)indexPath.row,(unsigned long)section.cells.count);
-        [section insertCellData:cells[index] atIndex:indexPath.row];
+        [section insertCellData:cellDatas[index] atIndex:indexPath.row];
+    }
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didInsertCells:atIndexPaths:)]) {
+        [self.delegate cellularViewData:self
+                         didInsertCells:cellDatas
+                           atIndexPaths:indexPaths];
     }
 }
 
 
--(void)deleteCellDataAtIndexPath:(NSIndexPath *)indexPath{
-    
-	KFXSectionData *section = self.sections[indexPath.section];
-    [section deleteCellDataAtIndex:indexPath.row];
-}
-
+//-----------------------------------
+// Delete Cells
+//-----------------------------------
 -(void)deleteCellData:(KFXCellData *)cellData{
     
+    NSIndexPath *indexPath = [self indexPathOfCellData:cellData];
     [cellData.sectionData deleteCellData:cellData];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didDeleteCells:atIndexPaths:)]) {
+        [self.delegate cellularViewData:self
+                         didDeleteCells:@[cellData]
+                            atIndexPaths:@[indexPath]];
+    }
 }
+
+-(void)deleteCellDataAtIndexPath:(NSIndexPath *)indexPath{
+    
+    KFXSectionData *section = self.sections[indexPath.section];
+    KFXCellData *cellData = [section cellForIndex:indexPath.row];
+    [section deleteCellDataAtIndex:indexPath.row];
+    
+    // Dynamic Delegate
+    if ([self.delegate respondsToSelector:@selector(cellularViewData:didDeleteCells:atIndexPaths:)]) {
+        [self.delegate cellularViewData:self
+                         didDeleteCells:@[cellData]
+                           atIndexPaths:@[indexPath]];
+    }
+}
+
 
 //--------------------------------------------------------
 #pragma mark SectionData Getters

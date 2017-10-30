@@ -1,6 +1,6 @@
 
 
-#import "KFXCollectionReusableView.h"
+#import <KFXAbstracts/KFXCollectionReusableView.h>
 
 @interface DEMOCollectionViewSectionHeader : KFXCollectionReusableView
 
