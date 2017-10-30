@@ -1,0 +1,6 @@
+framework module Pods_KFXCellularViewData_Example {
+  umbrella header "Pods-KFXCellularViewData_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

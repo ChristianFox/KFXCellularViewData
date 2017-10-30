@@ -1,0 +1,6 @@
+framework module KFXCellularViewData {
+  umbrella header "KFXCellularViewData-umbrella.h"
+
+  export *
+  module * { export * }
+}

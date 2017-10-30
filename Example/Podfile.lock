@@ -1,0 +1,16 @@
+PODS:
+  - KFXCellularViewData (0.1.0)
+
+DEPENDENCIES:
+  - KFXCellularViewData (from `../`)
+
+EXTERNAL SOURCES:
+  KFXCellularViewData:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KFXCellularViewData: 471cf3722ae8ba67050b95f1b7c62c8c51c89f77
+
+PODFILE CHECKSUM: 3a19378a54f12bfc8d7241add6d3d26b914841b3
+
+COCOAPODS: 1.2.1
