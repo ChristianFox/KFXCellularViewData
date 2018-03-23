@@ -1,13 +1,12 @@
 /********************************
  *
- * Copyright © 2017 Christian Fox
- * All Rights Reserved
- * Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
+ * Copyright © 2016-2018 Christian Fox
+ *
+ * MIT Licence - Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
  *
  * This file is included with KFXCellularViewData
  *
  ************************************/
-
 
 #import "KFXCellularViewData.h"
 #import "KFXSectionData_Private.h"
@@ -134,7 +133,7 @@
 //-----------------------------------
 -(void)deleteSection:(KFXSectionData *)sectionData{
     
-    NSUInteger sectionIndex;
+    NSUInteger sectionIndex = 0;
     if (self.delegate != nil) {
         sectionIndex = [self indexOfSectionData:sectionData];
     }
@@ -270,8 +269,9 @@
      
         NSAssert(indexPath.section < self.sections.count, @"section index of index path is out of bounds. %ld >= %lu",(long)indexPath.section,(unsigned long)self.sections.count);
         KFXSectionData *section = self.sections[indexPath.section];
-        NSAssert(indexPath.row < section.cells.count, @"row/item index of index path is out of bounds. %ld >= %lu",(long)indexPath.row,(unsigned long)section.cells.count);
+        NSAssert(indexPath.row <= section.cells.count, @"row/item index of index path is out of bounds. %ld > %lu",(long)indexPath.row,(unsigned long)section.cells.count);
         [section insertCellData:cellDatas[index] atIndex:indexPath.row];
+        index++;
     }
     
     // Dynamic Delegate

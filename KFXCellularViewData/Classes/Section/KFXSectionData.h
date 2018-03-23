@@ -1,8 +1,8 @@
 /********************************
  *
- * Copyright © 2017 Christian Fox
- * All Rights Reserved
- * Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
+ * Copyright © 2016-2018 Christian Fox
+ *
+ * MIT Licence - Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
  *
  * This file is included with KFXCellularViewData
  *
@@ -33,24 +33,43 @@
 //--------------------------------------------------------
 #pragma mark CellData Setters
 //--------------------------------------------------------
+/// Add the cell
 -(void)addCellData:(KFXCellData*)cellData;
+
+/// Add the cells from the array to the section cells array
 -(void)addCellDataFromArray:(NSArray<KFXCellData*>*)cellData;
+
+/// Insert the cell at the given index
 -(void)insertCellData:(KFXCellData*)cellData atIndex:(NSUInteger)index;
+
+/// Delete the cell
 -(void)deleteCellData:(KFXCellData*)cellData;
+
+/// Delete the cell at the index
 -(void)deleteCellDataAtIndex:(NSUInteger)index;
 
 //--------------------------------------------------------
 #pragma mark CellData Getters
 //--------------------------------------------------------
+/// Return the KFXCellData for the given tag
 -(KFXCellData*)cellForTag:(NSInteger)tag;
+
+/// Return the KFXCellData for the given identifier
 -(KFXCellData*)cellForIdentifier:(NSString*)identifier;
+
+/// Return the KFXCellData for the given index
 -(KFXCellData*)cellForIndex:(NSUInteger)index;
 
 //--------------------------------------------------------
 #pragma mark Queries
 //--------------------------------------------------------
+/// The number of cells in this section
 -(NSUInteger)count;
+
+/// The index of this section in it's parent
 -(NSUInteger)sectionIndex;
+
+/// The index of the cellData in this section's cells
 -(NSUInteger)indexOfCellData:(KFXCellData*)cellData;
 
 

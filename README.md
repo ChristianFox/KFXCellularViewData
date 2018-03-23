@@ -1,6 +1,5 @@
 # KFXCellularViewData
 
-[![CI Status](http://img.shields.io/travis/ChristianFox/KFXCellularViewData.svg?style=flat)](https://travis-ci.org/ChristianFox/KFXCellularViewData)
 [![Version](https://img.shields.io/cocoapods/v/KFXCellularViewData.svg?style=flat)](http://cocoapods.org/pods/KFXCellularViewData)
 [![License](https://img.shields.io/cocoapods/l/KFXCellularViewData.svg?style=flat)](http://cocoapods.org/pods/KFXCellularViewData)
 [![Platform](https://img.shields.io/cocoapods/p/KFXCellularViewData.svg?style=flat)](http://cocoapods.org/pods/KFXCellularViewData)
@@ -19,6 +18,10 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'KFXCellularViewData'
 ```
+
+## Overview
+Data containers for Table and Collection Views
+Includes some UI classes which are intended to dynamically update with changes to data containers but that is incomplete and buggy
 
 ## Author
 

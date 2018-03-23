@@ -1,8 +1,8 @@
 /********************************
  *
- * Copyright © 2017 Christian Fox
- * All Rights Reserved
- * Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
+ * Copyright © 2016-2018 Christian Fox
+ *
+ * MIT Licence - Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
  *
  * This file is included with KFXCellularViewData
  *
@@ -24,12 +24,16 @@
 //--------------------------------------------------------
 #pragma mark Initilisers
 //--------------------------------------------------------
+/// Initiliser a instance of KFXCellData
 +(instancetype)cellData;
+
+/// Initiliser a instance of KFXCellData with the contents
 +(instancetype)cellDataWithContents:(id)contents;
 
 //--------------------------------------------------------
 #pragma mark Queries
 //--------------------------------------------------------
+/// Return the NSIndexPath of the receiver in it's parent system
 -(NSIndexPath*)indexPath;
 
 @end

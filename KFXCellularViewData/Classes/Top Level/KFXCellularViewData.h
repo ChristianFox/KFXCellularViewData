@@ -1,8 +1,8 @@
 /********************************
  *
- * Copyright © 2017 Christian Fox
- * All Rights Reserved
- * Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
+ * Copyright © 2016-2018 Christian Fox
+ *
+ * MIT Licence - Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
  *
  * This file is included with KFXCellularViewData
  *
@@ -127,8 +127,13 @@
 //--------------------------------------------------------
 #pragma mark SectionData Getters
 //--------------------------------------------------------
+/// Return the KFXSectionData for the given tag
 -(__kindof KFXSectionData*)sectionForTag:(NSInteger)tag;
+
+/// Return the KFXSectionData for the given identifier
 -(__kindof KFXSectionData*)sectionForIdentifier:(NSString*)identifier;
+
+/// Return the KFXSectionData for the given index
 -(__kindof KFXSectionData*)sectionForIndex:(NSUInteger)index;
 
 //--------------------------------------------------------
@@ -144,19 +149,30 @@
 //-----------------------------------
 // Counts
 //-----------------------------------
+/// The number of sections
 -(NSUInteger)count;
+
+/// The number of cells in the section at the index
 -(NSUInteger)countForSectionAtIndex:(NSUInteger)index;
+
 //-----------------------------------
 // Indexs of Sections
 //-----------------------------------
+/// The index of the section data in the recevier's sections array
 -(NSUInteger)indexOfSectionData:(__kindof KFXSectionData*)sectionData;
+/// Returns an array of NSIndexSets for the sections in the receiver. The returned array may have less indexSets than sections because the indexSets may be ranges. They will also be ordered.
 -(NSArray<NSIndexSet*>*)orderedIndexSetsForSections:(NSArray<__kindof KFXSectionData*>*)sections;
+/// Returns an array of NSNumbers where each number is the index of the equivilantly placed section
 -(NSArray<NSNumber*>*)indexesForSections:(NSArray<__kindof KFXSectionData*>*)sections;
+
 //-----------------------------------
 // Index Paths of cells
 //-----------------------------------
+/// Returns the indexPath of the given cellData
 -(NSIndexPath*)indexPathOfCellData:(KFXCellData*)cellData;
+/// Returns an array of NSIndexPath for the cells in the receiver. They will also be ordered.
 -(NSArray<NSIndexPath*>*)orderedIndexPathsForCells:(NSArray<KFXCellData*>*)cells;
+/// Returns an array of NSIndexPath for the cells in the receiver.
 -(NSArray<NSIndexPath*>*)indexPathsForCells:(NSArray<KFXCellData*>*)cells;
 
 

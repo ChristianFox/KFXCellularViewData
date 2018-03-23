@@ -1,4 +1,12 @@
-
+/********************************
+ *
+ * Copyright © 2016-2018 Christian Fox
+ *
+ * MIT Licence - Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
+ *
+ * This file is included with KFXCellularViewData
+ *
+ ************************************/
 
 #import "KFXDynamicTableViewController.h"
 
@@ -90,10 +98,13 @@
     
     if (sectionDatas.count >= 1
         && indexSets.count >= 1) {
-        for (NSIndexSet *indexSet in indexSets) {
-            [self.tableView insertSections:indexSet
-                          withRowAnimation:self.insertSectionAnimation];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSIndexSet *indexSet in indexSets) {
+                [self.tableView insertSections:indexSet
+                              withRowAnimation:self.insertSectionAnimation];
+            }
+            
+        });
     }
 }
 
@@ -103,23 +114,27 @@
     
     if (sectionDatas.count >= 1
         && indexSets.count >= 1) {
-        for (NSIndexSet *indexSet in indexSets) {
-            [self.tableView deleteSections:indexSet
-                          withRowAnimation:self.deleteSectionAnimation];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSIndexSet *indexSet in indexSets) {
+                [self.tableView deleteSections:indexSet
+                              withRowAnimation:self.deleteSectionAnimation];
+            }
+        });
     }
 }
 
 -(void)cellularViewData:(KFXCellularViewData*)cellularViewData
       didUpdateSections:(NSArray<KFXSectionData*>*)sectionDatas
               atIndexes:(NSArray<NSIndexSet*>*)indexSets{
- 
+    
     if (sectionDatas.count >= 1
         && indexSets.count >= 1) {
-        for (NSIndexSet *indexSet in indexSets) {
-            [self.tableView reloadSections:indexSet
-                          withRowAnimation:self.reloadSectionAnimation];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSIndexSet *indexSet in indexSets) {
+                [self.tableView reloadSections:indexSet
+                              withRowAnimation:self.reloadSectionAnimation];
+            }
+        });
     }
 }
 
@@ -133,8 +148,10 @@
     
     if (cellDatas.count >= 1
         && indexPaths.count >= 1) {
-        [self.tableView insertRowsAtIndexPaths:indexPaths
-                              withRowAnimation:self.insertRowAnimation];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView insertRowsAtIndexPaths:indexPaths
+                                  withRowAnimation:self.insertRowAnimation];
+        });
     }
 }
 
@@ -145,8 +162,10 @@
     
     if (cellDatas.count >= 1
         && indexPaths.count >= 1) {
-        [self.tableView deleteRowsAtIndexPaths:indexPaths
-                              withRowAnimation:self.deleteRowAnimation];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView deleteRowsAtIndexPaths:indexPaths
+                                  withRowAnimation:self.deleteRowAnimation];
+        });
     }
 }
 
@@ -156,8 +175,10 @@
     
     if (cellDatas.count >= 1
         && indexPaths.count >= 1) {
-        [self.tableView reloadRowsAtIndexPaths:indexPaths
-                              withRowAnimation:self.reloadRowAnimation];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadRowsAtIndexPaths:indexPaths
+                                  withRowAnimation:self.reloadRowAnimation];
+        });
     }
 }
 

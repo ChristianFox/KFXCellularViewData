@@ -1,4 +1,12 @@
-
+/********************************
+ *
+ * Copyright © 2016-2018 Christian Fox
+ *
+ * MIT Licence - Full licence details can be found in the file 'LICENSE' or in the Pods-{yourProjectName}-acknowledgements.markdown
+ *
+ * This file is included with KFXCellularViewData
+ *
+ ************************************/
 
 #import "KFXDynamicCollectionViewController.h"
 
@@ -80,18 +88,18 @@
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
     KFXCollectionViewSectionData *sectionData = [self.collectionData sectionForIndex:indexPath.section];
-//    if (sectionData == nil) {
-//        return nil;
-//    }
+    //    if (sectionData == nil) {
+    //        return nil;
+    //    }
     NSString *reuseIdentifier;
     if (sectionData.headerViewReuseIdentifier != nil) {
         reuseIdentifier = sectionData.headerViewReuseIdentifier;
     }else if (sectionData.footerViewReuseIdentifier != nil){
         reuseIdentifier = sectionData.footerViewReuseIdentifier;
     }
-//    if (reuseIdentifier == nil) {
-//        return nil;
-//    }
+    //    if (reuseIdentifier == nil) {
+    //        return nil;
+    //    }
     UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                                 withReuseIdentifier:reuseIdentifier
                                                                                        forIndexPath:indexPath];
@@ -108,9 +116,11 @@
     
     if (sectionDatas.count >= 1
         && indexSets.count >= 1) {
-        for (NSIndexSet *indexSet in indexSets) {
-            [self.collectionView insertSections:indexSet];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSIndexSet *indexSet in indexSets) {
+                [self.collectionView insertSections:indexSet];
+            }
+        });
     }
 }
 
@@ -120,9 +130,11 @@
     
     if (sectionDatas.count >= 1
         && indexSets.count >= 1) {
-        for (NSIndexSet *indexSet in indexSets) {
-            [self.collectionView deleteSections:indexSet];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSIndexSet *indexSet in indexSets) {
+                [self.collectionView deleteSections:indexSet];
+            }
+        });
     }
 }
 
@@ -132,9 +144,11 @@
     
     if (sectionDatas.count >= 1
         && indexSets.count >= 1) {
-        for (NSIndexSet *indexSet in indexSets) {
-            [self.collectionView reloadSections:indexSet];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSIndexSet *indexSet in indexSets) {
+                [self.collectionView reloadSections:indexSet];
+            }
+        });
     }
 }
 
@@ -149,7 +163,9 @@
     
     if (cellDatas.count >= 1
         && indexPaths.count >= 1) {
-        [self.collectionView insertItemsAtIndexPaths:indexPaths];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView insertItemsAtIndexPaths:indexPaths];
+        });
     }
 }
 
@@ -160,7 +176,9 @@
     
     if (cellDatas.count >= 1
         && indexPaths.count >= 1) {
-        [self.collectionView deleteItemsAtIndexPaths:indexPaths];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView deleteItemsAtIndexPaths:indexPaths];
+        });
     }
 }
 
@@ -170,7 +188,9 @@
     
     if (cellDatas.count >= 1
         && indexPaths.count >= 1) {
-        [self.collectionView reloadItemsAtIndexPaths:indexPaths];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadItemsAtIndexPaths:indexPaths];
+        });
     }
 }
 
@@ -225,3 +245,4 @@
 
 
 @end
+

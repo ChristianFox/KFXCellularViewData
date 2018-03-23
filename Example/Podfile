@@ -1,25 +1,14 @@
-use_frameworks!
+# use_frameworks!
+platform :ios, '8.0'
 
 target 'KFXCellularViewData_Example' do
   pod 'KFXCellularViewData', :path => '../'
 
-## Sources
-### If using private pods
-source 'https://kfxtech@bitbucket.org/kfx_pods/kfxsharedspecs.git'
+  pod 'KFXUtilities'
+  pod 'KFXAdditions'
+  pod 'KFXAbstracts'
 
-pod 'KFXUtilities', '>= 2.0.0'
-pod 'KFXAdditions'
-pod 'KFXAbstracts'
-
-
-### If using from trunk
-source 'http://github.com/Cocoapods/Specs.git'
-
-
-  
   target 'KFXCellularViewData_Tests' do
     inherit! :search_paths
-
-    
   end
 end
