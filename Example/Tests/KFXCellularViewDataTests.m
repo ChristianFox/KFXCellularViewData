@@ -38,6 +38,18 @@
     XCTAssertNotNil(cellularData.sections);
 }
 
+-(void)testCellularViewDataWithContents{
+    NSArray *contents = @[
+                          @[@"section0-cell0",@"section0-cell1"],
+                          @[@"section1-cell0",@"section1-cell1",@"section1-cell2"]
+                          ];
+    KFXCellularViewData *cellularData = [KFXCellularViewData cellularViewDataWithContents:contents];
+    XCTAssertNotNil(cellularData);
+    XCTAssertEqual(2,cellularData.sections.count);
+    XCTAssertEqual(2,cellularData.sections.firstObject.count);
+    XCTAssertEqual(3,cellularData.sections.lastObject.count);
+}
+
 
 //======================================================
 #pragma mark - ** Primary Function Tests **

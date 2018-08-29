@@ -32,6 +32,9 @@
 //--------------------------------------------------------
 +(instancetype)sectionData;
 
+/// Initiliser a instance of KFXSectionData with a cell for each object in the contents array
++(instancetype)sectionDataWithContents:(NSArray<id>*)contents;
+
 //--------------------------------------------------------
 #pragma mark CellData Setters
 //--------------------------------------------------------

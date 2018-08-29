@@ -34,6 +34,17 @@
 	return [[self alloc]init];
 }
 
++(instancetype)cellularViewDataWithContents:(NSArray<id> *)contents{
+    KFXCellularViewData *cellularData = [self cellularViewData];
+    
+    for (NSArray<id> *obj in contents) {
+        KFXSectionData *section = [KFXSectionData sectionDataWithContents:obj];
+        [cellularData addSection:section];
+    }
+    return cellularData;
+}
+
+
 //--------------------------------------------------------
 #pragma mark - Inject Dependencies
 //--------------------------------------------------------

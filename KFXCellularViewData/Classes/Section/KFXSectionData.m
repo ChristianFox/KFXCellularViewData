@@ -44,6 +44,15 @@
 	return [[self alloc]init];
 }
 
++(instancetype)sectionDataWithContents:(NSArray<id> *)contents{
+    KFXSectionData *section = [self sectionData];
+    for (id obj in contents) {
+        KFXCellData *cell = [KFXCellData cellDataWithContents:obj];
+        [section addCellData:cell];
+    }
+    return section;
+}
+
 
 
 //--------------------------------------------------------

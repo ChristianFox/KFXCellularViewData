@@ -1,6 +1,8 @@
 
 # ChangeLog - KFXCellularViewData
 
+### 0.5.0 | Add methods to quickly create a stack of objects using just an array of contents 
+
 ### 0.4.0 | Adds extra property 'extraInfo' to KFXCellularViewData, KFXSectionData & KFXCellData for storing any other data needed. Adds -allContents; method to KFXCellularViewData & KFXSectionData which gets all the contents objects and returns in an array.
 
 ### 0.3.0 | - Adds some documenting comments, - Updates Licence, ReadMe

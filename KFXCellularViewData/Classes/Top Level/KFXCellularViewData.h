@@ -67,6 +67,10 @@
 //--------------------------------------------------------
 +(instancetype)cellularViewData;
 
+/// Initiliser a instance of KFXCellularViewData with sections and cells for each relevent object in the contents array
++(instancetype)cellularViewDataWithContents:(NSArray<NSArray<id>*>*)contents;
+
+
 //--------------------------------------------------------
 #pragma mark SectionData Setters
 //--------------------------------------------------------
