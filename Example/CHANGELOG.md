@@ -1,9 +1,9 @@
 
 # ChangeLog - KFXCellularViewData
 
-### 0.3.0 |
-- Adds some documenting comments
-- Updates Licence, ReadMe
+### 0.4.0 | Adds extra property 'extraInfo' to KFXCellularViewData, KFXSectionData & KFXCellData for storing any other data needed. Adds -allContents; method to KFXCellularViewData & KFXSectionData which gets all the contents objects and returns in an array.
+
+### 0.3.0 | - Adds some documenting comments, - Updates Licence, ReadMe
 
 ### v0.2.0 - KFXCellularViewDataDelegate
 - Add Dynamic Delegate to KFXCellularViewData with tests

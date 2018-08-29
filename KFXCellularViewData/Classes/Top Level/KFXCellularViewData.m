@@ -373,6 +373,19 @@
     return cell;
 }
 
+-(NSArray<NSArray<id> *> *)allContents{
+
+    NSMutableArray *mutArray = [NSMutableArray arrayWithCapacity:10];
+    for (KFXSectionData *section in self.sections) {
+        NSArray *contents = [section allContents];
+        if (contents == nil) {
+            contents = @[];
+        }
+        [mutArray addObject:contents];
+    }
+    return mutArray.copy;
+}
+
 //--------------------------------------------------------
 #pragma mark Queries
 //--------------------------------------------------------

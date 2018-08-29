@@ -15,12 +15,14 @@
 
 @interface KFXSectionData : NSObject
 
+// Data
 @property (strong,nonatomic) NSMutableArray<KFXCellData*> *cells;
 @property (copy,nonatomic) NSString *titleForHeader;
 @property (copy,nonatomic) NSString *titleForFooter;
 @property (copy,nonatomic) NSString *identifier;
 @property (nonatomic) NSInteger tag;
 @property (copy,nonatomic) NSString *cellReuseIdentifier;
+@property (strong,nonatomic) id extraInfo;
 // parent reference
 @property (weak,nonatomic,readonly) __kindof KFXCellularViewData *cellularViewData;
 
@@ -60,6 +62,9 @@
 /// Return the KFXCellData for the given index
 -(KFXCellData*)cellForIndex:(NSUInteger)index;
 
+/// Get the content properties from all of this section's cells
+-(NSArray<id>*)allContents;
+
 //--------------------------------------------------------
 #pragma mark Queries
 //--------------------------------------------------------
@@ -71,6 +76,11 @@
 
 /// The index of the cellData in this section's cells
 -(NSUInteger)indexOfCellData:(KFXCellData*)cellData;
+
+
+
+
+
 
 
 @end

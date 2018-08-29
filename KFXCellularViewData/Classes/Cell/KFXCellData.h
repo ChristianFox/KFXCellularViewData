@@ -13,11 +13,13 @@
 
 @interface KFXCellData : NSObject
 
+// Extra Info
 @property (copy,nonatomic) NSString *title;
 @property (copy,nonatomic) NSString *identifier;
 @property (copy,nonatomic) NSString *reuseIdentifier;
 @property (nonatomic) NSInteger tag;
 @property (strong,nonatomic) id contents;
+@property (strong,nonatomic) id extraInfo;
 // parent reference
 @property (weak,nonatomic,readonly) __kindof KFXSectionData *sectionData;
 
@@ -36,4 +38,8 @@
 /// Return the NSIndexPath of the receiver in it's parent system
 -(NSIndexPath*)indexPath;
 
+
+
 @end
+
+

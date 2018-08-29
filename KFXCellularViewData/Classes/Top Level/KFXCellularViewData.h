@@ -59,6 +59,7 @@
 @property (nonatomic) NSInteger tag;
 @property (copy,nonatomic) NSString *title;
 @property (copy,nonatomic) NSString *cellReuseIdentifier;
+@property (strong,nonatomic) id extraInfo;
 
 
 //--------------------------------------------------------
@@ -142,6 +143,9 @@
 -(KFXCellData*)cellForTag:(NSInteger)tag;
 -(KFXCellData*)cellForIdentifier:(NSString*)identifier;
 -(KFXCellData*)cellForIndexPath:(NSIndexPath*)indexPath;
+
+/// Get the content properties from all of this collection's section's cells
+-(NSArray<NSArray<id>*>*)allContents;
 
 //--------------------------------------------------------
 #pragma mark Queries

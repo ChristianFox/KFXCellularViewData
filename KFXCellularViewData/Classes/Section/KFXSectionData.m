@@ -10,7 +10,6 @@
 
 
 
-
 #import "KFXSectionData.h"
 #import "KFXSectionData_Private.h"
 #import "KFXCellData_Private.h"
@@ -119,6 +118,11 @@
         cell = self.cells[index];
     }
     return cell;
+}
+
+-(NSArray<id> *)allContents{
+    NSArray *contents = [self.cells valueForKey:@"contents"];
+    return contents;
 }
 
 

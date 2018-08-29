@@ -464,6 +464,29 @@
     XCTAssertEqualObjects(cellData1, received1);
 }
 
+-(void)testAllContents{
+    
+    // GIVEN
+    KFXCellData *cellData0 = [KFXCellData cellData];
+    cellData0.contents = @"Content 0";
+    KFXCellData *cellData1 = [KFXCellData cellData];
+    cellData1.contents = @{@"aKey":@"aValue"};
+    [self.sut addSection:[KFXSectionData sectionData]];
+    [self.sut addSection:[KFXSectionData sectionData]];
+    [self.sut addCellDatas:@[cellData0,cellData1] toSectionAtIndex:0];
+    [self.sut addCellDatas:@[cellData0,cellData1] toSectionAtIndex:1];
+
+    // WHEN
+    NSArray<NSArray<id>*> *contents = [self.sut allContents];
+    
+    // THEN
+    XCTAssertNotNil(contents);
+    XCTAssertEqual(2, contents.count);
+    XCTAssertEqualObjects(contents.firstObject.firstObject, cellData0.contents);
+    XCTAssertEqualObjects(contents.lastObject.lastObject, cellData1.contents);
+}
+
+
 //--------------------------------------------------------
 #pragma mark Test Queries
 //--------------------------------------------------------
