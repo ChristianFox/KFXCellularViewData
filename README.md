@@ -1,8 +1,8 @@
-# KFXCellularViewData
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-[![Version](https://img.shields.io/cocoapods/v/KFXCellularViewData.svg?style=flat)](http://cocoapods.org/pods/KFXCellularViewData)
-[![License](https://img.shields.io/cocoapods/l/KFXCellularViewData.svg?style=flat)](http://cocoapods.org/pods/KFXCellularViewData)
-[![Platform](https://img.shields.io/cocoapods/p/KFXCellularViewData.svg?style=flat)](http://cocoapods.org/pods/KFXCellularViewData)
+# DEPRECATED - This project is no longer actively maintained or used by the author
+
+# KFXCellularViewData
 
 ## Example
 
